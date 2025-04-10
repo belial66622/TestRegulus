@@ -1,6 +1,6 @@
 # TestRegulus
  
-Dalam game ini ada beberapa script yang saya gunakan:
+Dalam game ini ada beberapa script yang saya gunakan:<br>
 1.input -> InputControl.cs
 Input yang saya gunakan adalah newinputsystem script ini digunakan untuk menerima input dari inputsystem unity dan mengirimkan event.
 2.utility -> EventContainer.cs && Utility.cs

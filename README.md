@@ -36,6 +36,7 @@ Include translate downward animation
 Right-click a dot to change its color (cycle through all available colors)
 4. Special Tile
 Connect and clear 6 dots to create a Bomb at the end of the line. Bomb will explode on click and destroys a 3x3 area
+
 🌟 Bonus Requirements (Optional)
 1. More Special Tile
 Connect and clear 9 dots to create a Colored Bomb. A Colored Bomb can be connected to a dot to clear all dots of that color from the grid

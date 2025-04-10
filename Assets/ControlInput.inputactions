@@ -1,0 +1,74 @@
+{
+    "name": "ControlInput",
+    "maps": [
+        {
+            "name": "Game",
+            "id": "09d57b6f-b769-4238-8f19-2c31e641bf66",
+            "actions": [
+                {
+                    "name": "Choose",
+                    "type": "Button",
+                    "id": "687220ff-a7b5-4b7b-8c5b-de7faa083ba3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Release",
+                    "type": "Button",
+                    "id": "95785007-95c5-4714-978c-39dec62a7589",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeTile",
+                    "type": "Button",
+                    "id": "74de54e5-237e-4dfc-b0c1-a9d8542a470c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c24adf4d-6b1e-4e8e-99b8-acfe80448049",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Choose",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bdb9c09e-96d1-48d5-ac4d-f175f89e1600",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Release",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ae46fa46-2cac-4e14-9eb2-ada7afc34899",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeTile",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

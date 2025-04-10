@@ -55,6 +55,15 @@ namespace TestRegulus.Control
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""HighLight"",
+                    ""type"": ""Button"",
+                    ""id"": ""06f3469d-fc1e-45ad-8bbc-aa2103e7bfc1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -90,6 +99,17 @@ namespace TestRegulus.Control
                     ""action"": ""ChangeTile"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""28dcf0d4-4ffe-4d21-bfd1-8e722d2f5458"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""HighLight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -101,6 +121,7 @@ namespace TestRegulus.Control
             m_Game_Choose = m_Game.FindAction("Choose", throwIfNotFound: true);
             m_Game_Release = m_Game.FindAction("Release", throwIfNotFound: true);
             m_Game_ChangeTile = m_Game.FindAction("ChangeTile", throwIfNotFound: true);
+            m_Game_HighLight = m_Game.FindAction("HighLight", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -165,6 +186,7 @@ namespace TestRegulus.Control
         private readonly InputAction m_Game_Choose;
         private readonly InputAction m_Game_Release;
         private readonly InputAction m_Game_ChangeTile;
+        private readonly InputAction m_Game_HighLight;
         public struct GameActions
         {
             private @ControlInput m_Wrapper;
@@ -172,6 +194,7 @@ namespace TestRegulus.Control
             public InputAction @Choose => m_Wrapper.m_Game_Choose;
             public InputAction @Release => m_Wrapper.m_Game_Release;
             public InputAction @ChangeTile => m_Wrapper.m_Game_ChangeTile;
+            public InputAction @HighLight => m_Wrapper.m_Game_HighLight;
             public InputActionMap Get() { return m_Wrapper.m_Game; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -190,6 +213,9 @@ namespace TestRegulus.Control
                 @ChangeTile.started += instance.OnChangeTile;
                 @ChangeTile.performed += instance.OnChangeTile;
                 @ChangeTile.canceled += instance.OnChangeTile;
+                @HighLight.started += instance.OnHighLight;
+                @HighLight.performed += instance.OnHighLight;
+                @HighLight.canceled += instance.OnHighLight;
             }
 
             private void UnregisterCallbacks(IGameActions instance)
@@ -203,6 +229,9 @@ namespace TestRegulus.Control
                 @ChangeTile.started -= instance.OnChangeTile;
                 @ChangeTile.performed -= instance.OnChangeTile;
                 @ChangeTile.canceled -= instance.OnChangeTile;
+                @HighLight.started -= instance.OnHighLight;
+                @HighLight.performed -= instance.OnHighLight;
+                @HighLight.canceled -= instance.OnHighLight;
             }
 
             public void RemoveCallbacks(IGameActions instance)
@@ -225,6 +254,7 @@ namespace TestRegulus.Control
             void OnChoose(InputAction.CallbackContext context);
             void OnRelease(InputAction.CallbackContext context);
             void OnChangeTile(InputAction.CallbackContext context);
+            void OnHighLight(InputAction.CallbackContext context);
         }
     }
 }

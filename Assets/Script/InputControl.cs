@@ -54,5 +54,10 @@ public class InputControl : MonoBehaviour
             }
         }
     }
+
+    public void OnHighLight(InputValue value)
+    { 
+        EventContainer.OnHighlightClicked?.Invoke();
+    }
 }
 

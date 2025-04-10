@@ -7,4 +7,5 @@ public static class EventContainer
     public static Action<Tile> OnSelectedTile;
     public static Action OnLastTileDestroyed;
     public static Action<int,int> OnBombClicked;
+    public static Action OnHighlightClicked;
 }

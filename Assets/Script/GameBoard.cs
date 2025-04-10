@@ -57,6 +57,7 @@ public class GameBoard : MonoBehaviour
         EventContainer.OnSelectedTile += OnSelectedTile;
         EventContainer.OnLastTileDestroyed += AssignAvailableTile;
         EventContainer.OnBombClicked += Explode;
+        EventContainer.OnHighlightClicked += HighLightMatch;
     }
 
     private void OnDestroy()
@@ -66,6 +67,7 @@ public class GameBoard : MonoBehaviour
         EventContainer.OnSelectedTile -= OnSelectedTile;
         EventContainer.OnLastTileDestroyed -= AssignAvailableTile;
         EventContainer.OnBombClicked -= Explode;
+        EventContainer.OnHighlightClicked -= HighLightMatch;
     }
 
     // Start is called before the first frame update
@@ -338,10 +340,12 @@ public class GameBoard : MonoBehaviour
         int randomRow;
         int tilex;
         int tiley;
+        IsHighlightActive = false;
         for (int i = 0; i < row; i++)
         {
             for (int j = 0; j < column; j++)
             {
+                tileArray[j, i].ActivateHighlight(false);
                 randomColumn = Random.Range(0, column);
                 randomRow = Random.Range(0, row);
                 tiley = i;
@@ -360,6 +364,7 @@ public class GameBoard : MonoBehaviour
 
                 tileArray[j, i].transform.position = new Vector3(-pos.x + (j * xOffset), pos.y - (i * yOffset));
                 tileArray[randomColumn, randomRow].transform.position = new Vector3(-pos.x + (randomColumn * xOffset), pos.y - (randomRow * yOffset));
+
             }
         }
     }
